@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: makemybill-backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: MONGODB_URI
+        value: "<your-mongodb-uri>"
+      - key: CORS_ORIGIN
+        value: "https://YOUR_VERCEL_FRONTEND_URL"
+      - key: JWT_SECRET
+        value: "<your-jwt-secret>"
+    autoDeploy: true
